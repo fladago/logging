@@ -20,12 +20,22 @@ class AlreadyHaveAnAccountCheck extends StatelessWidget {
           login ? "Don't have an Account?" : "Already have an Account?",
           style: const TextStyle(color: kPrimaryColor),
         ),
+        const SizedBox(width: 20),
         GestureDetector(
           onTap: press,
-          child: Text(
-            login ? "Sign Up" : "Sign In",
-            style: const TextStyle(
-              color: kPrimaryColor,
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: kPrimaryLightColor,
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                login ? "Sign Up" : "Sign In",
+                style: const TextStyle(
+                  color: kPrimaryColor,
+                ),
+              ),
             ),
           ),
         ),

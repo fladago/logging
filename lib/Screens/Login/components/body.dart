@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:loginflway/Screens/Login/components/background.dart';
+import 'package:loginflway/Screens/Signup/signup_screen.dart';
 import 'package:loginflway/conponents/already_have_an_account_check.dart';
 import 'package:loginflway/conponents/rounded_button.dart';
 import 'package:loginflway/conponents/rounded_input_field.dart';
@@ -14,8 +15,9 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    return SingleChildScrollView(
-      child: Background(
+
+    return Background(
+      child: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -36,7 +38,12 @@ class Body extends StatelessWidget {
             RoundedButton(text: "LOGIN", press: () {}),
             SizedBox(height: size.height * 0.03),
             AlreadyHaveAnAccountCheck(
-              press: (() {}),
+              press: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const SignUpScreen()),
+                );
+              },
             ),
           ],
         ),
